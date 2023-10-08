@@ -9,8 +9,8 @@
 #       version shipped by the vendor, ensuring feature level is equivalent.
 
 let
-  version = "3.12.5";
-  hash = "sha256-u4pnKd5ZEC3CS3E2i8E8Wposd8Tu4ZUoQXFmr0runwE=";
+  version = "3.12.6";
+  hash = "sha256-xQPRUO7UivfdoVf2MWfRI6l2T8n+gGqhQyj068fr7Sg=";
 in
 gamescope'.overrideAttrs({ buildInputs, ... }: {
   name = "gamescope-${version}";
@@ -18,6 +18,7 @@ gamescope'.overrideAttrs({ buildInputs, ... }: {
     owner = "ValveSoftware";
     repo = "gamescope";
     rev = "refs/tags/${version}";
+    fetchSubmodules = true;
     inherit hash;
   };
 
